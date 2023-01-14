@@ -22,14 +22,14 @@ sed -i "s|if (bind_user == 'True') {|if (bind_user == 'REMOVED') {|g" /www/serve
 rm -rf /www/server/panel/data/bind.pl
 ```
 <br/>&nbsp;
-**如果遇到重启后宝塔乱码 请修改语言区域：**
+**如果出现乱码或LC_ALL报错，请修改语言区域：**
 ```Bash
 nano /etc/default/locale
 ```
 ```Bash
 LANG=en_US.UTF-8
 ```
-***或者***
+***或者直接输入以下命令***
 ```Bash
 localedef -i en_US -f UTF-8 en_US.UTF-8
 ```
