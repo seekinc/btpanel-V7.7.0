@@ -33,3 +33,17 @@ LANG=en_US.UTF-8
 ```Bash
 localedef -i en_US -f UTF-8 en_US.UTF-8
 ```
+自用备份信息：
+#宝塔面板7.7原版第三方存档
+纯原版1：curl -sSO https://raw.githubusercontent.com/zhucaidan/btpanel-v7.7.0/main/install/install_panel.sh && bash install_panel.sh
+纯原版2：wget -O install.sh http://f.cccyun.cc/bt/install_6.0.sh && bash install.sh
+升级(降级)到7.7命令： curl http://f.cccyun.cc/bt/update6.sh|bash
+
+<!--宝塔7.7原版一键开心脚本-->
+curl -sSO https://raw.githubusercontent.com/ztkink/bthappy/main/one_key_happy.sh && bash one_key_happy.sh
+
+<!--手动解锁宝塔所有付费插件为永不过期-->
+文件路径：www/server/panel/data/plugin.json
+搜索字符串："endtime": -1 全部替换为 "endtime": 999999999999
+<!--手动阻止解锁插件后自动修复为免费版-->
+chattr +i /www/server/panel/data/plugin.json
